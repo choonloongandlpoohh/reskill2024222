@@ -1,0 +1,57 @@
+drop table address;
+drop table foods;
+drop table cars;
+
+create table foods
+(
+	ID int generated always as identity primary key,
+	name varchar(50) unique
+);
+
+create table cars
+(
+	ID int generated always as identity primary key,
+	name varchar(50) unique
+);
+
+create table address
+(
+	ID int generated always as identity primary key,
+	name varchar(10) NOT NULL,
+	birthday date,
+	hphone varchar(13) NOT NULL,
+	memo varchar(100),
+	food varchar(50),
+	car varchar(50),
+
+	CONSTRAINT fk_address_food
+		FOREIGN KEY(food)
+		REFERENCES foods(name)
+		on delete cascade
+		on update cascade,
+
+	CONSTRAINT fk_address_car
+		FOREIGN KEY(car)
+		REFERENCES cars(name)
+		on delete cascade
+		on update cascade
+);
+
+insert into foods (name) values ('짜장면');
+insert into foods (name) values ('짬뽕');
+insert into foods (name) values ('새우튀김');
+insert into foods (name) values ('고기완자');
+
+insert into cars (name) values ('sonata');
+insert into cars (name) values ('benz');
+insert into cars (name) values ('bmw');
+insert into cars (name) values ('audi');
+insert into cars (name) values ('tico');
+
+insert into address(name, birthday, hphone, memo, food, car) values('홍길동', '1987-01-05', '010-1111-1111', '절친', '짜장면', 'bmw');
+insert into address(name, birthday, hphone, memo, food, car) values('박길동', '2010-03-07', '010-1123-0515', '', '짜장면', 'sonata');
+insert into address(name, birthday, hphone, memo, food, car) values('최길동', '2000-01-01', '010-5515-4574', '절친', '새우튀김', 'benz');
+insert into address(name, birthday, hphone, memo, food, car) values('나길동', '1998-03-14', '010-7743-5743', '돈 빌림', '새우튀김', 'bmw');
+insert into address(name, birthday, hphone, memo, food, car) values('윤지원', '1996-04-22', '010-7457-6475', '', '고기완자', 'bmw');
+insert into address(name, birthday, hphone, memo, food, car) values('고길동', '2007-09-09', '010-3511-5858', '', '고기완자', NULL);
+insert into address(name, birthday, hphone, memo, food, car) values('박길동', '1997-05-05', '010-4874-7871', '절친 아님', '짬뽕', NULL);
