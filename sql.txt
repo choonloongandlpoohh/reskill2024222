@@ -1116,3 +1116,45 @@ create view address_food_v as
     and foods.id >= 3;
 
 select * from address_food_v;
+
+#####################
+
+create table guest
+(
+  id int generated always as identity primary key,
+  name varchar(20) not null,
+  phone varchar(20),
+  sid varchar(14) not null
+);
+
+create table target
+(
+  id int generated always as identity primary key,
+  address varchar(50) not null
+);
+
+create table team
+(
+  id int generated always as identity primary key,
+  name varchar(20) not null,
+  address varchar(50) not null
+);
+
+create table apply
+(
+  id int generated always as identity primary key
+  , guestid int not null
+  , targetid int not null
+  , teamid int
+  , applydate date not null
+  , surveydate date
+  , survertime time
+
+  , constraint fk_apply_guestid foreign key(guestid) references guest(id)
+  , CONSTRAINT FK_APPLY_TARGETID FOREIGN KEY(targetID) REFERENCES target(ID)
+  , CONSTRAINT FK_APPLY_TEAMID FOREIGN KEY(teamID) REFERENCES team(ID)
+);
+
+
+#####################################################################
+
