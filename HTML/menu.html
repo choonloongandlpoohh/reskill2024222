@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>메뉴판 작성</title>
 </head>
 <body>
+	아이디 : <input type="text" placeholder="아이디"><br>
+	비밀번호 : <input type="password" placeholder="비밀번호">
+	<hr>
+	<h2>우리식당 메뉴</h2>
 	<table border=1>
 	<tr>
 		<th colspan=2>메뉴</th>
-		<th>가격</th>
+		<th width="100">가격</th>
+		<th>설명</th>
 	</tr>
 	<tr>
 		<td><img src="./img/fish.png"></td>
-		<td>피쉬앤칩스</td>
-		<td>12,000원</td>
+		<td width="200">피쉬앤칩스</td>
+		<td align="right">12,000원</td>
+		<td>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
 	</tr>
 	<tr>
 		<td><img src="./img/pork.png"></td>
 		<td>숯불향제육볶음</td>
-		<td>13,000원</td>
+		<td align="right">13,000원</td>
+		<td>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</td>
 	</tr>
 	<tr>
 		<td><img src="./img/jjajang.png"></td>
 		<td>짜장덮밥</td>
-		<td>8,000원</td>
+		<td align="right">8,000원</td>
+		<td>ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</td>
 	</tr>
 	</table>
+	<br><hr><br>
+	<form>
+		<input type="text" placeholder="이름"><br>
+		<input type="text" placeholder="메뉴"><br>
+		<input type="checkbox">수저 포함<br>
+		<input type="checkbox">일회용품 포함<br>
+		시작일: <input type="date"><br>
+		종료일: <input type="date"><br>
+	</form>
 </body>
 </html>
