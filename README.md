@@ -1,3 +1,8 @@
+# 아무말
+
+
+
+
 - 👋 Hi, I’m @LXbootcamp
 - 👀 I’m interested in ...
 - 🌱 I’m currently learning ...
