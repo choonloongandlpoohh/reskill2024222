@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input</title>
+</head>
+<body>
+<form action="https://localhost">
+아이디 : <input type="text" placeholder="아이디"><br>
+비밀번호 : <input type="password" placeholder="비밀번호" style="background-color:#FF0000"><br>
+이름 : <input type="text" placeholder="이름"><br>
+주소 : <input type="text" placeholder="주소"><hr>
+
+시작일 : <input type="date"><br>
+종료일 : <input type="date"><hr>
+
+<input type="checkbox">수저 포함<br>
+<input type="checkbox">일회용품 포함<hr>
+
+<input type="radio" name="hobby" value="춤"> 춤
+<input type="radio" name="hobby" value="게임"> 게임
+<input type="radio" name="hobby" value="독서"> 독서<hr>
+
+<select size="1">
+	<option value="1"> 짜장면 </option>
+	<option value="2"> 짬뽕 </option>
+	<option value="3"> 탕수육 </option>
+</select><hr>
+	<input type="number" name="count" required>
+	<button type="submit"> 제출 </button>
+<hr>
+	<input type="tel" name = "phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required
+<hr>
+<button type="submit"> 제출 </button>
+</form>
+</body>
+</html>
