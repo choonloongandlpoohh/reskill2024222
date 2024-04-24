@@ -19,7 +19,7 @@ public class Proj001
 		// 쿼리를 실행하는 Statement 변수
 		Statement stmt = null;
 		
-		// 결과를 받아올 변수
+		// 결과를 받아올 변수 (select쿼리를 실행한 결과를 받아서 저장)
 		ResultSet rs = null;
 		
 		// 시도한다. 이 try {} 안에서 실행을 시도하다가 문제가 생기면 catch {} 로 간다.
@@ -38,7 +38,7 @@ public class Proj001
 			String query = "select * from books where author like '%교육지원실장%'"; // 조회
 	
 			// 쿼리를 실행한 결과를 rs로 받는다.
-			rs = stmt.executeQuery(query);
+			rs = stmt.executeQuery(query); // (DB의 자료를 읽어오기 위해 Statement클래스에서 제공하는 함수)
 
 			// rs에 다음 자료가 있을 때까지 실행한다.
 			while (rs.next())
