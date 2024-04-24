@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>20240424 JDBC</title>
+    </head>
+    <body>
+        <h1>java에서 database 자료 가져오는 방법</h1>
+        <h2>필요한 자료 준비</h2>
+        java에서 datavase에 접속해서 자료를 가져오기 위해서는 다음의 자료가 필요하다.
+        <ol>
+            <li>접속할 서버 주소와 포트번호
+                <ul>
+                    <li>String url = "jdbc:postgresql://127.0.0.1:43432/testdb";</li>
+                </ul>
+            </li><br>
+            <li>접속할 사용자 이름, 비번
+                <ul>
+                    <li>String user = "scott";</li>
+                    <li>String password = "0000";</li>
+                </ul>
+            </li><br>
+            <li>연결을 위한 변수
+                <ul>
+                    <li>Connection con = null;</li>
+                </ul>
+            </li><br>
+            <li>쿼리를 실행하는 Statement 변수
+                <ul>
+                    <li>Statement stmt = null;</li>
+                </ul>
+            </li><br>
+            <li>결과를 받아올 변수
+                <ul>
+                    <li>ResultSet rs = null;</li>
+                </ul>
+            </li><br>
+            <li>try-catch문
+                <ul>
+                    <li>
+<pre>try
+{
+    Class.forName("org.postgresql.Driver");
+    con = DriverManager.getConnection(url, user, pwd);
+    stmt = con.createStatement();
+    String query = "select *from books";
+    rs = stmt.executeQuery(query);
+    while (rs.next())
+    {
+        // String title = rs.getString("title");
+        // String author = rs.getString("author");
+        // System.out.println(title + " " + author);
+        System.out.println(rs.getString("ID") + ". " + rs.getString("name"));
+    }
+    rs.close();
+    stmt.close();
+    con.close();
+}
+catch(Exception ex)
+{
+    System.out.println("err: " + ex.toString());
+}
+</pre></li>
+                </ul>
+            </li>
+        </ol>
+        
+
+
+
+    </body>
+</html>
