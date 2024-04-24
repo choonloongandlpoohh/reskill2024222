@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Proj003 
+public class Proj004
 {
 	public static void main(String[] args)
 	{		
@@ -19,10 +19,6 @@ public class Proj003
 		// 쿼리를 실행하는 Statement 변수
 		Statement stmt = null;
 		
-		/*
-		// 결과를 받아올 변수
-		ResultSet rs = null;
-		*/
 		
 		// 시도한다. 이 try {} 안에서 실행을 시도하다가 문제가 생기면 catch {} 로 간다.
 		try
@@ -37,35 +33,14 @@ public class Proj003
 			stmt = con.createStatement();
 
 			// 실행할 쿼리문
-			String query = "insert into books (name, publisher, author, price) values('책 4', '호호출판사', '호호', 10000)"; // 삽입
+			String query = "delete from books where name='책 4'"; // 삭제
 			
 			// 쿼리를 실행한다.
 			int n = stmt.executeUpdate(query);
 			System.out.println("이 sql문으로 영향을 받은 row 수: "+n); // executeUpdate영향을 받는 줄 수
 			
 			
-			/*-------------------------------------------------------------------------
-			// 쿼리를 실행한 결과를 rs로 받는다.
-			rs = stmt.executeQuery(query);
 
-			// rs에 다음 자료가 있을 때까지 실행한다.
-			while (rs.next())
-			{
-				// DBMS에서 가져온 결과를 보여준다.
-				System.out.println(rs.getString("ID") + ". " + rs.getString("name"));
-				// String strID = rs.getString("ID");
-				// String strName = rs.getString("name");
-				// System.out.println(strID + ". " + strName);
-				
-				String publisher = rs.getString("publisher"); // 변수로 선언할 수 있음
-				String author = rs.getString("author");
-				System.out.println(rs.getString("ID") + " | " + rs.getString("name") + " | " + publisher + " | " + author + " | " + rs.getString("price"));
-			}
-						
-			// 다 사용했으면 결과를 닫는다.
-			rs.close();
-			-------------------------------------------------------------------------*/
-			
 			
 			// 쿼리를 위한 Statement를 닫는다.
 			stmt.close();
