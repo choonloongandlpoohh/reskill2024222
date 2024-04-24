@@ -35,8 +35,8 @@ public class Proj001
 			stmt = con.createStatement();
 
 			// 실행할 쿼리문
-			String query = "select * from books where author like '%교육지원실장%'";
-	        
+			String query = "select * from books where author like '%교육지원실장%'"; // 조회
+	
 			// 쿼리를 실행한 결과를 rs로 받는다.
 			rs = stmt.executeQuery(query);
 
