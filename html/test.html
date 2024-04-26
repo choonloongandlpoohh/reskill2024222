@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script>
+            const url = window.location.href; // const : 값을 바꾸지 않겠다  var, let : 변경가능
+            const params = new URLSearchParams(window.location.search);
+            const param_userID = params.get('userID');
+            document.write('파라미터로 넘어온 userID의 값은 <b>' + param_userID +'</b>입니다.');
+        </script>
+    </head>
+</html>
